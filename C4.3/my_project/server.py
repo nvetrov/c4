@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
-#!/usr/bin/env python3
+# !/usr/bin/env python3
 
 import bottle
+
 
 class TodoItem:
     def __init__(self, description, unique_id):
@@ -19,6 +20,7 @@ class TodoItem:
             "uid": self.uid
         }
 
+
 tasks_db = {
     uid: TodoItem(desc, uid)
     for uid, desc in enumerate(
@@ -30,6 +32,7 @@ tasks_db = {
             "поесть еды",
         ])
 }
+
 
 @bottle.route("/api/tasks/")
 def index():
